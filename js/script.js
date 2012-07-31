@@ -234,3 +234,14 @@ $(function() {
 	new RWS.App();
 	Backbone.history.start({ pushState: false });
 });
+
+// change the active nav list item
+$('.nav-list li').click(function(e) {
+  var $this = $(this);
+  if (!$this.hasClass('active')) {
+    $this.siblings('.active').removeClass('active')
+      .children('a').children('i').removeClass('icon-white');
+    $this.addClass('active')
+      .children('a').children('i').addClass('icon-white');
+  }
+});

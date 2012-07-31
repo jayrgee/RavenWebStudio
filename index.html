@@ -88,12 +88,15 @@
   <div role="main">
 	<div class="container-fluid">
 	<div class="row-fluid">
-	  <div class="span4">
+	  <div class="span3">
 		<ul class="nav nav-list">
           <li class="nav-header">Options</li>
           <li class="active"><a href="#"><i class="icon-white icon-home"></i> Home</a></li>
-          <li><a href="#index-definitions"><i class="icon-book"></i> Indexes</a></li>
-          <li><a href="#documents"><i class="icon-pencil"></i> All Documents</a></li>
+          <li><a href="#collections"><i class="icon-th"></i> Collections</a></li>
+          <li><a href="#index-definitions"><i class="icon-list"></i> Indexes</a></li>
+          <li><a href="#documents"><i class="icon-file"></i> All Documents</a></li>
+          <li><a href="#tasks"><i class="icon-play-circle"></i> Tasks</a></li>
+          <li><a href="#logs"><i class="icon-film"></i> Logs</a></li>
           <li class="nav-header">Another list header</li>
           <li><a href="#"><i class="icon-user"></i> Profile</a></li>
           <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
@@ -101,7 +104,9 @@
           <li><a href="#"><i class="icon-flag"></i> Help</a></li>
         </ul>
 	  </div>
-	  <div class="span8" id="index-definition-list"></div>
+	  <div class="span9">
+	    <ul id="index-definition-list"></ul>
+      </div>
 	</div>
 	</div>
   </div>
@@ -128,9 +133,7 @@
   <!-- end scripts -->
 
 <script id="indexSummaryTemplate" type="text/html">
-    <div class='icon-search' style='float:right; padding-left:10px;'/>
-	<div class='icon-pencil' style='float:right; padding-left:10px;'/>
-	<p>Name: {{name}}</p>
+    <p>Name: {{name}}</p>
 	{{#definition}}
 	<p>Temporary: {{IsTemp}}</p>
 	<p>Maps:</p>
@@ -140,12 +143,11 @@
 	{{/definition}}
 </script>
 
-
 <script id="documentSummaryTemplate" type="text/html">
 	<div class='icon-pencil' style='float:right; padding-left:10px;' title='click here to edit the document'/>
 	<p>Id: {{id}}</p>
 	{{#metadata}}
-	<p>Type: {{Raven-Entity-Name}}
+	<p>Type: {{Raven-Entity-Name}}</p>
 	{{/metadata}}
 </script>
 
@@ -169,6 +171,8 @@
 	
 	
 </script>
+
+
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
   <!--<script>
